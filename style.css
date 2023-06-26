@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,
+.time,
+.T1,
+.T2,
+.T3,
+.T4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.digital-clock,
+.time,
+.T2,
+.T3,
+.T4 {
+    position: relative;
+}
+
+body {
+    min-height: 80vh;
+    background: black;
+}
+
+.digital-clock {
+    color: #fff;
+    background: black;
+    width: 425px;
+    padding: 20px 45px;
+    border-radius: 10px;
+}
+
+.digital-clock::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, orange, red, orange);
+    background-size: 100% 100%;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    z-index: -1;
+    filter: blur(30px);
+    animation: glowing 2s ease infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0% 100%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+
+}
+
+#hours {
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+    font-size: 10em;
+    background: -webkit-linear-gradient(90deg, yellow, orange);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.T2 {
+    flex-direction: column;
+}
+
+#dots {
+    font-size: 6em;
+    transform: translateY(-3px);
+    color: grey;
+    margin-top: -20px;
+}
+
+#minutes {
+    font-size: 6em;
+    padding: 0 5px;
+    margin-top: -15px;
+    font-weight: 500;
+    margin-left: 5px;
+    transform: translateY(10px);
+    background: -webkit-linear-gradient(90deg, green, grey);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.T4 {
+    margin-left: 10px;
+    transform: translateY(-25px);
+}
+
+#period,
+#seconds {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#period {
+    color: wheat;
+}
+
+#seconds {
+    color: red;
+}
+
+#description {
+    font-size: 5px;
+    color: white;
+
+}
